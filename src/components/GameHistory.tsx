@@ -1,5 +1,5 @@
-import React from 'react';
-import { History, Clock } from 'lucide-react';
+import React from "react";
+import { History, Clock } from "lucide-react";
 
 interface GameHistoryProps {
   history: Array<{
@@ -12,10 +12,10 @@ interface GameHistoryProps {
 const GameHistory: React.FC<GameHistoryProps> = ({ history }) => {
   // Format date to a readable string
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
+    return new Intl.DateTimeFormat("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
     }).format(date);
   };
 
@@ -29,9 +29,9 @@ const GameHistory: React.FC<GameHistoryProps> = ({ history }) => {
 
   // Get appropriate color class based on winner
   const getResultColorClass = (winner: string | null) => {
-    if (winner === 'X') return 'text-indigo-600';
-    if (winner === 'O') return 'text-purple-600';
-    return 'text-gray-600';
+    if (winner === "X") return "text-indigo-600";
+    if (winner === "O") return "text-purple-600";
+    return "text-gray-600";
   };
 
   return (
@@ -40,15 +40,20 @@ const GameHistory: React.FC<GameHistoryProps> = ({ history }) => {
         <History className="h-5 w-5 text-blue-500" />
         Game History
       </h2>
-      
+
       <div className="max-h-60 overflow-y-auto space-y-2 pr-1">
         {history.length === 0 ? (
           <p className="text-gray-500 text-sm italic">No games played yet</p>
         ) : (
           [...history].reverse().map((game, index) => (
-            <div key={index} className="p-2 bg-white rounded border border-gray-200 text-sm">
+            <div
+              key={index}
+              className="p-2 bg-white rounded border border-gray-200 text-sm"
+            >
               <div className="flex justify-between items-center mb-1">
-                <span className={`font-medium ${getResultColorClass(game.winner)}`}>
+                <span
+                  className={`font-medium ${getResultColorClass(game.winner)}`}
+                >
                   {getResultText(game.winner)}
                 </span>
                 <span className="text-gray-500 flex items-center gap-1">

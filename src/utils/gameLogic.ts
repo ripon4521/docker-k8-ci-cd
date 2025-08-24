@@ -21,7 +21,7 @@ export function calculateWinner(squares: Array<string | null>) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return {
         winner: squares[a],
-        line: [a, b, c]
+        line: [a, b, c],
       };
     }
   }
@@ -39,7 +39,7 @@ export function checkDraw(squares: Array<string | null>): boolean {
   if (calculateWinner(squares)) {
     return false;
   }
-  
+
   // If all squares are filled, it's a draw
-  return squares.every(square => square !== null);
+  return squares.every((square) => square !== null);
 }

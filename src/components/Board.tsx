@@ -1,5 +1,5 @@
-import React from 'react';
-import Square from './Square';
+import React from "react";
+import Square from "./Square";
 
 interface BoardProps {
   squares: Array<string | null>;
@@ -10,7 +10,7 @@ interface BoardProps {
 const Board: React.FC<BoardProps> = ({ squares, onClick, winningLine }) => {
   const renderSquare = (i: number) => {
     const isWinningSquare = winningLine?.includes(i) || false;
-    
+
     return (
       <Square
         value={squares[i]}
@@ -22,11 +22,11 @@ const Board: React.FC<BoardProps> = ({ squares, onClick, winningLine }) => {
 
   return (
     <div className="grid grid-cols-3 gap-2 w-full max-w-xs">
-      {Array(9).fill(null).map((_, i) => (
-        <div key={i}>
-          {renderSquare(i)}
-        </div>
-      ))}
+      {Array(9)
+        .fill(null)
+        .map((_, i) => (
+          <div key={i}>{renderSquare(i)}</div>
+        ))}
     </div>
   );
 };
