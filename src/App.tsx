@@ -8,15 +8,53 @@ import { calculateWinner, checkDraw } from './utils/gameLogic';
 function App() {
   // Game state
   const [board, setBoard] = useState(Array(9).fill(null));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const [xIsNext, setXIsNext] = useState(true);
   const [scores, setScores] = useState({ X: 0, O: 0, draws: 0 });
-  const [gameHistory, setGameHistory] = useState<Array<{
+                                 const [gameHistory, setGameHistory] = useState<Array<{
     winner: string | null;
     board: Array<string | null>;
     date: Date;
   }>>([]);
+
+
+
+
+
+
+
+
+
+
+
+
+
   const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'draw'>('playing');
-  const [winningLine, setWinningLine] = useState<number[] | null>(null);
+  const [winningLine, setWinningLine] 
+  
+  
+  
+  
+  = useState<number[] | null>(null);
 
   // Check for winner or draw
   useEffect(() => {
